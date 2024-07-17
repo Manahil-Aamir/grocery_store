@@ -51,10 +51,10 @@ class CustomTextField extends GetView {
   OutlineInputBorder copyWithBorder() {
     return OutlineInputBorder(
       borderSide: BorderSide(
-        color: borderColor ?? Colors.grey[600]!,
+        color: borderColor ?? Colors.grey[100]!,
         width: borderWidth ?? 3.0,
       ),
-      borderRadius: BorderRadius.circular(borderRadius ?? 3.0),
+      borderRadius: BorderRadius.circular(borderRadius ?? 5.0),
     );
   }
 
@@ -73,7 +73,7 @@ class CustomTextField extends GetView {
           labelText: labelText,
           hintText: hintText ?? '',
           labelStyle: TextStyle(
-            color: labelColor ?? Colors.black,
+            color: labelColor ?? Colors.grey[600],
           ),
           filled: true,
           fillColor: backgroundColor ?? Colors.white,
@@ -84,7 +84,7 @@ class CustomTextField extends GetView {
               contentPadding ?? const EdgeInsets.symmetric(horizontal: 16.0),
           suffixIcon: icon?.click(onTap: onPressed),
         ),
-        style: TextStyle(color: foregroundColor ?? Colors.black),
+        style: TextStyle(color: foregroundColor ?? Colors.grey[600]),
       ),
     );
   }

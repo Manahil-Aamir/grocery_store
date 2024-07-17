@@ -12,9 +12,11 @@ class SplashView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Future.delayed(const Duration(milliseconds: 4000), () {
-      Get.toNamed(Routes.intro);
-    });
+    if (Get.currentRoute == Routes.splash) {
+      Future.delayed(const Duration(milliseconds: 4000), () {
+        Get.toNamed(Routes.intro);
+      });
+    }
     final theme = context.theme;
     SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
         statusBarColor: theme.primaryColorLight,
