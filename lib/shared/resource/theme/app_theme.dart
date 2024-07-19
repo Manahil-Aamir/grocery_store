@@ -29,8 +29,9 @@ class AppTheme {
           isLight ? LightThemeColors.canvasColor : DarkThemeColors.canvasColor,
 
       //Card Background Color
-      cardColor:
-          isLight ? LightThemeColors.cardColor : DarkThemeColors.cardColor,
+      cardColor: isLight
+          ? const Color.fromARGB(255, 241, 241, 241)
+          : DarkThemeColors.cardColor,
 
       //Hint Text Color
       hintColor: isLight
@@ -41,12 +42,6 @@ class AppTheme {
       dividerColor: isLight
           ? LightThemeColors.dividerColor
           : DarkThemeColors.dividerColor,
-
-      // colorScheme: ColorScheme.fromSwatch().copyWith(
-      //     secondary: isLight
-      //         ? LightThemeColors.accentColor
-      //         : DarkThemeColors.accentColor),
-
       //Input Decoration Theme
       inputDecorationTheme:
           AppStyles.getInputDecorationTheme(isLightTheme: isLight),
@@ -75,6 +70,10 @@ class AppTheme {
 
       //Icon Theme
       iconTheme: AppStyles.getIconTheme(isLightTheme: isLight),
+      colorScheme: ColorScheme.fromSwatch().copyWith(
+          secondary: isLight
+              ? LightThemeColors.accentColor
+              : DarkThemeColors.accentColor),
     );
   }
 }

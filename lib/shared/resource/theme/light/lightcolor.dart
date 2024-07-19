@@ -15,7 +15,7 @@ abstract class LightThemeColors {
   static const scaffoldBackgroundColor = Colors.white;
   static const backgroundColor = Colors.white;
   static const dividerColor = Color(0xFFF1F1F5);
-  static const cardColor = Color(0xFFF3F5F7);
+  static const cardColor = Color.fromARGB(255, 230, 230, 231);
 
   //ICONS
   static const appBarIconsColor = Color(0xFF06161C);

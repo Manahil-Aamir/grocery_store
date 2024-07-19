@@ -7,8 +7,8 @@ import 'package:flutter_project/shared/routes/Routes.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-class IntroView extends GetView<IntroController> {
-  const IntroView({super.key});
+class IntroPage extends GetView<IntroController> {
+  const IntroPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -72,7 +72,7 @@ class IntroView extends GetView<IntroController> {
             ),
             ElevatedButton(
               onPressed: () {
-                print('hi');
+                // print('hi');
                 Get.toNamed(Routes.login);
               },
               style: AppStyles.getElevatedButtonTheme(isLightTheme: true).style,

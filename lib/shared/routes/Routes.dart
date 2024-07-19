@@ -1,13 +1,13 @@
 import 'package:flutter_project/modules/intro/bindings/intro_bindings.dart';
-import 'package:flutter_project/modules/intro/view/intro_view.dart';
+import 'package:flutter_project/modules/intro/view/intro_page.dart';
 import 'package:flutter_project/modules/landingscreen/bindings/landing_bindings.dart';
-import 'package:flutter_project/modules/landingscreen/view/landing_view.dart';
-import 'package:flutter_project/modules/login/bindings/login_bindings.dart';
-import 'package:flutter_project/modules/login/view/login_view.dart';
-import 'package:flutter_project/modules/signup/bindings/signup_bindings.dart';
-import 'package:flutter_project/modules/signup/view/signup_view.dart';
+import 'package:flutter_project/modules/landingscreen/view/landing_page.dart';
+import 'package:flutter_project/modules/authentication/login/bindings/login_bindings.dart';
+import 'package:flutter_project/modules/authentication/login/view/login_page.dart';
+import 'package:flutter_project/modules/authentication/signup/bindings/signup_bindings.dart';
+import 'package:flutter_project/modules/authentication/signup/view/signup_page.dart';
 import 'package:flutter_project/modules/splashscreen/binding/splash_binding.dart';
-import 'package:flutter_project/modules/splashscreen/view/splash_view.dart';
+import 'package:flutter_project/modules/splashscreen/view/splash_page.dart';
 import 'package:get/get.dart';
 
 class Routes {
@@ -33,23 +33,23 @@ class Pages {
   static final allPages = [
     GetPage(
         name: Routes.login,
-        page: () => const LoginView(),
+        page: () => const LoginPage(),
         binding: LoginBindings()),
     GetPage(
         name: Routes.intro,
-        page: () => const IntroView(),
+        page: () => const IntroPage(),
         binding: IntroBindings()),
     GetPage(
         name: Routes.splash,
-        page: () => const SplashView(),
+        page: () => const SplashPage(),
         binding: SplashBindings()),
     GetPage(
         name: Routes.signup,
-        page: () => const SignupView(),
+        page: () => const SignupPage(),
         binding: SignupBindings()),
     GetPage(
         name: Routes.landing,
-        page: () => const LandingView(),
+        page: () => const LandingPage(),
         binding: LandingBindings()),
   ];
 }
