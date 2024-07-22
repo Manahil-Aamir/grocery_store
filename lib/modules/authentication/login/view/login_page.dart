@@ -14,8 +14,8 @@ class LoginPage extends GetView<LoginController> {
     final theme = context.theme;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor:
-            Get.isDarkMode ? theme.primaryColorLight : theme.primaryColor,
+        // backgroundColor:
+        //     Get.isDarkMode ? theme.primaryColorLight : theme.primaryColor,
         centerTitle: true,
         title: Text(
           'Login',
@@ -27,6 +27,7 @@ class LoginPage extends GetView<LoginController> {
         child: Form(
           key: controller.loginFormKey,
           child: ListView(
+            physics: const NeverScrollableScrollPhysics(),
             children: [
               Padding(
                 padding: EdgeInsets.only(top: 50.h),

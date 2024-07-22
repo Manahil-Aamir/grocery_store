@@ -12,17 +12,18 @@ class IntroPage extends GetView<IntroController> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = context.theme;
     return Scaffold(
       body: Container(
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           gradient: LinearGradient(
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              Color.fromRGBO(201, 239, 212, 0.961),
-              Colors.white,
+              theme.primaryColorLight.withOpacity(0.05),
+              theme.scaffoldBackgroundColor,
             ],
-            stops: [0, 0.5],
+            stops: const [0, 0.5],
           ),
         ),
         child: Column(
@@ -46,6 +47,7 @@ class IntroPage extends GetView<IntroController> {
             ),
             CircleAvatar(
               radius: 33.r,
+              backgroundColor: theme.scaffoldBackgroundColor,
               child: Center(
                 child: CustomImageView(
                   imagePath: Images.leaves,
@@ -73,7 +75,7 @@ class IntroPage extends GetView<IntroController> {
             ElevatedButton(
               onPressed: () {
                 // print('hi');
-                Get.toNamed(Routes.login);
+                Get.offAllNamed(Routes.login);
               },
               style: AppStyles.getElevatedButtonTheme(isLightTheme: true).style,
               child: const Text(
@@ -85,7 +87,8 @@ class IntroPage extends GetView<IntroController> {
               child: Align(
                 alignment: Alignment.bottomCenter,
                 child: CustomImageView(
-                  imagePath: Images.fruits,
+                  imagePath:
+                      (Get.isDarkMode) ? Images.darkfruits : Images.fruits,
                   fit: BoxFit.fill,
                   imageSize: Size(MediaQuery.of(context).size.width, 360.h),
                 ),

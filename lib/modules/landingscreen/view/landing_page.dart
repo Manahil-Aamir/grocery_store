@@ -20,7 +20,9 @@ class LandingPage extends GetView<LandingController> {
             begin: Alignment.topCenter,
             end: Alignment.bottomCenter,
             colors: [
-              theme.cardColor,
+              (Get.isDarkMode)
+                  ? theme.cardColor.withOpacity(0.5)
+                  : theme.cardColor,
               theme.scaffoldBackgroundColor,
             ],
             stops: const [0, 0.5],
@@ -30,34 +32,33 @@ class LandingPage extends GetView<LandingController> {
           padding: const EdgeInsets.all(8.0),
           child: Column(
             children: [
-              SizedBox(height: 20.h),
+              20.verticalSpace,
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 24.0),
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 16.0),
                   decoration: BoxDecoration(
-                    color: theme.scaffoldBackgroundColor,
+                    color: theme.primaryColorDark,
                     borderRadius: BorderRadius.circular(30.0),
                   ),
                   child: TextField(
                     decoration: InputDecoration(
                       hintText: 'Search category',
-                      hintStyle: TextStyle(color: theme.primaryColorLight),
+                      hintStyle: TextStyle(color: theme.hintColor),
                       border: InputBorder.none,
-                      fillColor: theme.scaffoldBackgroundColor,
-                      prefixIcon:
-                          Icon(Icons.search, color: theme.primaryColorLight),
+                      fillColor: theme.primaryColorDark,
+                      prefixIcon: Icon(Icons.search, color: theme.primaryColor),
                     ),
                   ),
                 ),
               ),
-              SizedBox(height: 12.h),
+              12.verticalSpace,
               CustomImageView(
                 imagePath: Images.banner,
                 fit: BoxFit.fill,
                 imageSize: Size(MediaQuery.of(context).size.width, 180.h),
               ),
-              SizedBox(height: 14.h),
+              14.verticalSpace,
               Row(
                 children: [
                   Text(
@@ -71,11 +72,11 @@ class LandingPage extends GetView<LandingController> {
                     style: Theme.of(context)
                         .textTheme
                         .headlineSmall
-                        ?.copyWith(color: theme.primaryColorLight),
+                        ?.copyWith(color: theme.primaryColor),
                   )
                 ],
               ),
-              SizedBox(height: 14.h),
+              14.verticalSpace,
               GetBuilder<LandingController>(builder: (controller) {
                 return Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -89,7 +90,7 @@ class LandingPage extends GetView<LandingController> {
                   ],
                 );
               }),
-              SizedBox(height: 14.h),
+              14.verticalSpace,
               Row(
                 children: [
                   Text(
@@ -103,23 +104,21 @@ class LandingPage extends GetView<LandingController> {
                     style: Theme.of(context)
                         .textTheme
                         .headlineSmall
-                        ?.copyWith(color: theme.primaryColorLight),
+                        ?.copyWith(color: theme.primaryColor),
                   )
                 ],
               ),
-              SizedBox(
-                height: 14.h,
-              ),
+              14.verticalSpace,
               GetBuilder<LandingController>(builder: (controller) {
                 return Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     ...controller.getbest().map((c) {
-                      return CustomItem(
-                        name: c.name,
-                        imageUrl: c.imageUrl,
-                        price: c.price,
-                        weight: c.weight,
+                      return CustomItem.create(
+                        c.name,
+                        c.imageUrl,
+                        c.weight,
+                        c.price,
                       );
                     }),
                   ],

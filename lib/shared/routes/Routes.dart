@@ -1,3 +1,7 @@
+import 'package:flutter_project/modules/authentication/accountcreated/bindings/created_bindings.dart';
+import 'package:flutter_project/modules/authentication/accountcreated/view/created_page.dart';
+import 'package:flutter_project/modules/authentication/verify/bindings/verify_bindings.dart';
+import 'package:flutter_project/modules/authentication/verify/view/verify_page.dart';
 import 'package:flutter_project/modules/intro/bindings/intro_bindings.dart';
 import 'package:flutter_project/modules/intro/view/intro_page.dart';
 import 'package:flutter_project/modules/landingscreen/bindings/landing_bindings.dart';
@@ -17,6 +21,8 @@ class Routes {
   static const splash = _Path.splash;
   static const signup = _Path.signup;
   static const landing = _Path.landing;
+  static const verify = _Path.verify;
+  static const created = _Path.created;
 }
 
 abstract class _Path {
@@ -25,6 +31,8 @@ abstract class _Path {
   static const splash = '/Splash';
   static const signup = '/Signup';
   static const landing = '/Landing';
+  static const verify = '/Verify';
+  static const created = '/Created';
 }
 
 class Pages {
@@ -51,5 +59,13 @@ class Pages {
         name: Routes.landing,
         page: () => const LandingPage(),
         binding: LandingBindings()),
+    GetPage(
+        name: Routes.verify,
+        page: () => const VerifyPage(),
+        binding: VerifyBindings()),
+    GetPage(
+        name: Routes.created,
+        page: () => const CreatedPage(),
+        binding: CreatedBindings()),
   ];
 }

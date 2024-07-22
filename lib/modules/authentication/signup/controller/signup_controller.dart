@@ -10,7 +10,7 @@ class SignupController extends GetxController {
   // Editing Controller
   final firstnameController = TextEditingController();
   final lastnameController = TextEditingController();
-  final number = TextEditingController();
+  final numberController = TextEditingController();
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
@@ -30,7 +30,9 @@ class SignupController extends GetxController {
     try {
       dismissKeyboard();
       if (await _isFormValidated()) {
-        // print('shan');
+        String email = emailController.text;
+        print(email);
+        Get.toNamed(Routes.verify, arguments: {"email": email});
       }
     } catch (e) {
       print(e);
@@ -38,7 +40,7 @@ class SignupController extends GetxController {
   }
 
   void gotoLogin() {
-    Get.toNamed(Routes.login);
+    Get.back();
   }
 
   @override

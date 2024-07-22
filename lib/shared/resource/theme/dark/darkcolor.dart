@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 abstract class DarkThemeColors {
   //DARK SWATCH
   static const primaryColor = Color(0xFF23AA49);
-  static const primaryColorLight = Color(0xFF0D1F29);
+  static const primaryColorLight = Color.fromARGB(255, 15, 27, 33);
   static const primaryColorDark = Color(0xFF1A3848);
   static const accentColor = Color(0xFFFF324B);
   static const canvasColor = Color(0xFF172C38);
@@ -19,7 +19,8 @@ abstract class DarkThemeColors {
 
   //ICONS
   static const appBarIconsColor = Colors.white;
-  static const iconColor = Color(0xFF617986);
+  //static const iconColor = Color(0xFF617986);
+  static const iconColor = Color.fromARGB(255, 255, 255, 255);
 
   //BUTTON
   static const buttonColor = primaryColor;

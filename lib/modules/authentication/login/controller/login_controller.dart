@@ -27,7 +27,7 @@ class LoginController extends GetxController {
     try {
       dismissKeyboard();
       if (await _isFormValidated()) {
-        // print('shan');
+        Get.offAllNamed(Routes.landing);
       }
     } catch (e) {
       print(e);

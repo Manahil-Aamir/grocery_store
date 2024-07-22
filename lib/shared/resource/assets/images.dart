@@ -12,4 +12,6 @@ class Images {
   static const String fire = '${baseImagesPath}fire.png';
   static const String bellPepper = '${baseImagesPath}bell_pepper.png';
   static const String lambMeat = '${baseImagesPath}lamb_meat.png';
+  static const String darkfruits = '${baseImagesPath}darkfruit.png';
+  static const String verifyemail = '${baseImagesPath}verify_email.png';
 }

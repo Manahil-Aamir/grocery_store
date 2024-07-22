@@ -19,7 +19,7 @@ class SignupPage extends GetView<SignupController> {
             Get.isDarkMode ? theme.primaryColorLight : theme.primaryColor,
         centerTitle: true,
         title: Text(
-          'Login',
+          'Signup',
           style: theme.textTheme.displaySmall?.copyWith(color: Colors.white),
         ),
       ),
@@ -28,6 +28,7 @@ class SignupPage extends GetView<SignupController> {
         child: Form(
           key: controller.signinFormKey,
           child: ListView(
+            physics: const NeverScrollableScrollPhysics(),
             children: [
               Padding(
                 padding: EdgeInsets.only(top: 50.h),
@@ -38,7 +39,7 @@ class SignupPage extends GetView<SignupController> {
               ),
               RichText(
                 text: TextSpan(
-                  style: theme.textTheme.displayMedium,
+                  style: theme.textTheme.bodyMedium,
                   children: [
                     const TextSpan(
                       text:
@@ -46,8 +47,8 @@ class SignupPage extends GetView<SignupController> {
                     ),
                     TextSpan(
                       text: 'Already have an account?',
-                      style: theme.textTheme.displayMedium?.copyWith(
-                        color: theme.primaryColorLight,
+                      style: theme.textTheme.bodyMedium?.copyWith(
+                        color: theme.primaryColor,
                       ),
                       recognizer: TapGestureRecognizer()
                         ..onTap = () {
@@ -62,7 +63,7 @@ class SignupPage extends GetView<SignupController> {
                 hint: 'First Name',
                 isSearchField: false.obs,
                 validator: (value) => SignupFormValidator.validateName(value),
-                controller: controller.emailController,
+                controller: controller.firstnameController,
                 keyboardType: TextInputType.text,
               ),
               20.verticalSpace,
@@ -79,7 +80,7 @@ class SignupPage extends GetView<SignupController> {
                 isSearchField: false.obs,
                 validator: (value) =>
                     SignupFormValidator.validatePhoneNumber(value),
-                controller: controller.emailController,
+                controller: controller.numberController,
                 keyboardType: TextInputType.emailAddress,
               ),
               20.verticalSpace,
