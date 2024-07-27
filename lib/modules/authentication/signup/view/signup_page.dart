@@ -14,6 +14,7 @@ class SignupPage extends GetView<SignupController> {
   Widget build(BuildContext context) {
     final theme = context.theme;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor:
             Get.isDarkMode ? theme.primaryColorLight : theme.primaryColor,
@@ -23,104 +24,110 @@ class SignupPage extends GetView<SignupController> {
           style: theme.textTheme.displaySmall?.copyWith(color: Colors.white),
         ),
       ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.w),
-        child: Form(
-          key: controller.signinFormKey,
-          child: ListView(
-            physics: const NeverScrollableScrollPhysics(),
-            children: [
-              Padding(
-                padding: EdgeInsets.only(top: 50.h),
-                child: Text(
-                  'Create Account',
-                  style: theme.textTheme.headlineLarge,
+      body: SingleChildScrollView(
+        // primary: false,
+        padding:
+            EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 24.w),
+          child: Form(
+            key: controller.signinFormKey,
+            child: Column(
+              // physics: const NeverScrollableScrollPhysics(),
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(top: 50.h),
+                  child: Text(
+                    'Create Account',
+                    style: theme.textTheme.headlineLarge,
+                  ),
                 ),
-              ),
-              RichText(
-                text: TextSpan(
-                  style: theme.textTheme.bodyMedium,
-                  children: [
-                    const TextSpan(
-                      text:
-                          'Enter your Name, Number, Username and Password to signup ',
-                    ),
-                    TextSpan(
-                      text: 'Already have an account?',
-                      style: theme.textTheme.bodyMedium?.copyWith(
-                        color: theme.primaryColor,
+                RichText(
+                  text: TextSpan(
+                    style: theme.textTheme.bodyMedium,
+                    children: [
+                      const TextSpan(
+                        text:
+                            'Enter your Name, Number, Username and Password to signup ',
                       ),
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = () {
-                          controller.gotoLogin();
-                        },
+                      TextSpan(
+                        text: 'Already have an account?',
+                        style: theme.textTheme.bodyMedium?.copyWith(
+                          color: theme.primaryColor,
+                        ),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            controller.gotoLogin();
+                          },
+                      ),
+                    ],
+                  ),
+                ),
+                20.verticalSpace,
+                CustomFormField(
+                  hint: 'First Name',
+                  isSearchField: false.obs,
+                  validator: (value) => SignupFormValidator.validateName(value),
+                  controller: controller.firstnameController,
+                  keyboardType: TextInputType.text,
+                ),
+                20.verticalSpace,
+                CustomFormField(
+                  hint: 'Last Name',
+                  isSearchField: false.obs,
+                  validator: (value) => SignupFormValidator.validateName(value),
+                  controller: controller.lastnameController,
+                  keyboardType: TextInputType.text,
+                ),
+                20.verticalSpace,
+                CustomFormField(
+                  hint: 'Number',
+                  isSearchField: false.obs,
+                  validator: (value) =>
+                      SignupFormValidator.validatePhoneNumber(value),
+                  controller: controller.numberController,
+                  keyboardType: TextInputType.emailAddress,
+                ),
+                20.verticalSpace,
+                CustomFormField(
+                  hint: 'Email',
+                  isSearchField: false.obs,
+                  validator: (value) =>
+                      SignupFormValidator.validateEmail(value),
+                  controller: controller.emailController,
+                  keyboardType: TextInputType.emailAddress,
+                ),
+                20.verticalSpace,
+                CustomFormField(
+                  isSearchField: false.obs,
+                  hint: 'Password',
+                  obscureText: true,
+                  validator: (value) =>
+                      SignupFormValidator.validatePassword(value),
+                  controller: controller.passwordController,
+                ),
+                35.verticalSpace,
+                CustomButton(
+                  text: 'Signup',
+                  onPressed: controller.signup,
+                ),
+                12.verticalSpace,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Flexible(
+                      child: Text(
+                        'By signup up, you agree to our Term Conditions and Privacy Policy',
+                        softWrap: true,
+                        overflow: TextOverflow.visible,
+                        textAlign: TextAlign.center,
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      ),
                     ),
                   ],
-                ),
-              ),
-              20.verticalSpace,
-              CustomFormField(
-                hint: 'First Name',
-                isSearchField: false.obs,
-                validator: (value) => SignupFormValidator.validateName(value),
-                controller: controller.firstnameController,
-                keyboardType: TextInputType.text,
-              ),
-              20.verticalSpace,
-              CustomFormField(
-                hint: 'Last Name',
-                isSearchField: false.obs,
-                validator: (value) => SignupFormValidator.validateName(value),
-                controller: controller.lastnameController,
-                keyboardType: TextInputType.text,
-              ),
-              20.verticalSpace,
-              CustomFormField(
-                hint: 'Number',
-                isSearchField: false.obs,
-                validator: (value) =>
-                    SignupFormValidator.validatePhoneNumber(value),
-                controller: controller.numberController,
-                keyboardType: TextInputType.emailAddress,
-              ),
-              20.verticalSpace,
-              CustomFormField(
-                hint: 'Email',
-                isSearchField: false.obs,
-                validator: (value) => SignupFormValidator.validateEmail(value),
-                controller: controller.emailController,
-                keyboardType: TextInputType.emailAddress,
-              ),
-              20.verticalSpace,
-              CustomFormField(
-                isSearchField: false.obs,
-                hint: 'Password',
-                obscureText: true,
-                validator: (value) =>
-                    SignupFormValidator.validatePassword(value),
-                controller: controller.passwordController,
-              ),
-              35.verticalSpace,
-              CustomButton(
-                text: 'Signup',
-                onPressed: controller.signup,
-              ),
-              12.verticalSpace,
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Flexible(
-                    child: Text(
-                      'By signup up, you agree to our Term Conditions and Privacy Policy',
-                      softWrap: true,
-                      overflow: TextOverflow.visible,
-                      textAlign: TextAlign.center,
-                      style: Theme.of(context).textTheme.bodyMedium,
-                    ),
-                  ),
-                ],
-              )
-            ],
+                )
+              ],
+            ),
           ),
         ),
       ),

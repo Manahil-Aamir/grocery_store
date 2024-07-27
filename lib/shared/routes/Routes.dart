@@ -2,6 +2,8 @@ import 'package:flutter_project/modules/authentication/accountcreated/bindings/c
 import 'package:flutter_project/modules/authentication/accountcreated/view/created_page.dart';
 import 'package:flutter_project/modules/authentication/verify/bindings/verify_bindings.dart';
 import 'package:flutter_project/modules/authentication/verify/view/verify_page.dart';
+import 'package:flutter_project/modules/base/bindings/base_bindings.dart';
+import 'package:flutter_project/modules/base/view/base_page.dart';
 import 'package:flutter_project/modules/intro/bindings/intro_bindings.dart';
 import 'package:flutter_project/modules/intro/view/intro_page.dart';
 import 'package:flutter_project/modules/landingscreen/bindings/landing_bindings.dart';
@@ -23,6 +25,7 @@ class Routes {
   static const landing = _Path.landing;
   static const verify = _Path.verify;
   static const created = _Path.created;
+  static const base = _Path.base;
 }
 
 abstract class _Path {
@@ -33,6 +36,7 @@ abstract class _Path {
   static const landing = '/Landing';
   static const verify = '/Verify';
   static const created = '/Created';
+  static const base = '/Base';
 }
 
 class Pages {
@@ -67,5 +71,9 @@ class Pages {
         name: Routes.created,
         page: () => const CreatedPage(),
         binding: CreatedBindings()),
+    GetPage(
+        name: Routes.base,
+        page: () => const BasePage(),
+        binding: BaseBindings()),
   ];
 }

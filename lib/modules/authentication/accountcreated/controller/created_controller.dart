@@ -3,6 +3,6 @@ import 'package:get/get.dart';
 
 class CreatedController extends GetxController {
   void next() {
-    Get.offAllNamed(Routes.landing);
+    Get.offAllNamed(Routes.base);
   }
 }

@@ -29,10 +29,11 @@ class SignupController extends GetxController {
   signup() async {
     try {
       dismissKeyboard();
+      Get.toNamed(Routes.verify);
       if (await _isFormValidated()) {
-        String email = emailController.text;
-        print(email);
-        Get.toNamed(Routes.verify, arguments: {"email": email});
+        // String email = emailController.text;
+        // print(email);
+        // Get.toNamed(Routes.verify, arguments: {"email": email});
       }
     } catch (e) {
       print(e);

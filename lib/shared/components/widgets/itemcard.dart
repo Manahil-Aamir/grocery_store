@@ -21,7 +21,7 @@ class ItemCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = context.theme;
     return Container(
-      height: 214.h,
+      height: 240.h,
       width: 163.w,
       decoration: BoxDecoration(
           color: theme.cardColor,
@@ -31,9 +31,9 @@ class ItemCard extends StatelessWidget {
         child: Column(
           children: [
             CustomImageView(imagePath: imageUrl),
-            SizedBox(height: 10.h),
+            5.verticalSpace,
             Text(name, style: Theme.of(context).textTheme.titleLarge),
-            SizedBox(height: 5.h),
+            5.verticalSpace,
             Row(
               children: [
                 Text('${weight}kg, \$$price',
@@ -43,18 +43,21 @@ class ItemCard extends StatelessWidget {
                         ?.copyWith(color: const Color(0xFFFF324B))),
                 const Spacer(),
                 Container(
-                  height: 45.h,
-                  width: 45.w,
+                  height: 36.h,
+                  width: 36.w,
                   decoration: BoxDecoration(
                     color: theme.primaryColor,
                     shape: BoxShape.circle,
                   ),
-                  child: IconButton(
-                    onPressed: () {},
-                    icon: Icon(
-                      Icons.add,
-                      size: 30.r,
-                      color: theme.iconTheme.color,
+                  child: Center(
+                    child: IconButton(
+                      padding: EdgeInsets.zero,
+                      onPressed: () {},
+                      icon: Icon(
+                        Icons.add,
+                        size: 30.r,
+                        color: theme.iconTheme.color,
+                      ),
                     ),
                   ),
                 ),

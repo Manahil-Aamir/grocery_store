@@ -4,6 +4,7 @@ class Images {
   static const String leaves = '${baseImagesPath}leaves.png';
   static const String fruits = '${baseImagesPath}fruit.png';
   static const String banner = '${baseImagesPath}banner.png';
+  static const String banner2 = '${baseImagesPath}banner2.png';
   static const String apple = '${baseImagesPath}apple.png';
   static const String broccoli = '${baseImagesPath}broccoli.png';
   static const String cheese = '${baseImagesPath}cheese.png';
@@ -14,4 +15,6 @@ class Images {
   static const String lambMeat = '${baseImagesPath}lamb_meat.png';
   static const String darkfruits = '${baseImagesPath}darkfruit.png';
   static const String verifyemail = '${baseImagesPath}verify_email.png';
+  static const String pic = '${baseImagesPath}pic.png';
+  static const String arabicginger = '${baseImagesPath}arabic_gingers.png';
 }

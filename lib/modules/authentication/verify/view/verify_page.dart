@@ -33,15 +33,15 @@ class VerifyPage extends GetView<VerifyController> {
             16.verticalSpace,
             CustomImageView(
               imagePath: Images.verifyemail,
-              imageSize: const Size(270, 250),
-              fit: BoxFit.fill,
+              imageSize: Size(.7.sw, .7.sw),
+              // fit: BoxFit.fill,
             ),
             20.verticalSpace,
             Text('Verify your Email',
                 style: Theme.of(context).textTheme.headlineLarge),
             20.verticalSpace,
             Text(
-              controller.email,
+              'controller.email',
               style: Theme.of(context)
                   .textTheme
                   .displayMedium

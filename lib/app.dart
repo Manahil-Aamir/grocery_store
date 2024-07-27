@@ -3,7 +3,6 @@ import 'package:flutter_project/shared/resource/theme/app_theme.dart';
 import 'package:flutter_project/shared/routes/Routes.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
