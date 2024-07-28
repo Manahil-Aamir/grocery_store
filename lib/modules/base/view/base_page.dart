@@ -1,12 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_project/constant/get_builder_ids.dart';
 import 'package:flutter_project/modules/base/controller/base_controller.dart';
-import 'package:flutter_project/modules/landingscreen/bindings/landing_bindings.dart';
 import 'package:flutter_project/modules/landingscreen/view/landing_page.dart';
-import 'package:flutter_project/shared/components/widgets/customicon.dart';
 import 'package:flutter_project/shared/components/widgets/customimageview.dart';
-import 'package:flutter_project/shared/resource/assets/images.dart';
 import 'package:flutter_project/shared/resource/assets/vectors.dart';
 import 'package:get/get.dart';
 

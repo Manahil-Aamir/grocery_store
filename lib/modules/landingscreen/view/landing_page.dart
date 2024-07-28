@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/modules/landingscreen/controller/landing_controller.dart';
+import 'package:flutter_project/modules/landingscreen/widgets/categoryview.dart';
 import 'package:flutter_project/modules/landingscreen/widgets/customcategory.dart';
 import 'package:flutter_project/modules/landingscreen/widgets/homeappbar.dart';
 import 'package:flutter_project/shared/components/widgets/customimageview.dart';
@@ -75,21 +76,7 @@ class LandingPage extends GetView<LandingController> {
               ],
             ),
             14.verticalSpace,
-            GetBuilder<LandingController>(builder: (controller) {
-              return SizedBox(
-                height: 100.h,
-                //ListView.separated
-                child: ListView(
-                  scrollDirection: Axis.horizontal,
-                  children: controller.categories.map((c) {
-                    return CustomCategory(
-                      category: c.category,
-                      imageUrl: c.imageUrl,
-                    );
-                  }).toList(),
-                ),
-              );
-            }),
+            const CategoryView(),
             14.verticalSpace,
             Row(
               children: [
