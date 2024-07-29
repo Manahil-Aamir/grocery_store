@@ -4,6 +4,8 @@ import 'package:flutter_project/modules/authentication/verify/bindings/verify_bi
 import 'package:flutter_project/modules/authentication/verify/view/verify_page.dart';
 import 'package:flutter_project/modules/base/bindings/base_bindings.dart';
 import 'package:flutter_project/modules/base/view/base_page.dart';
+import 'package:flutter_project/modules/categoryscreen/bindings/category_bindings.dart';
+import 'package:flutter_project/modules/categoryscreen/view/category_page.dart';
 import 'package:flutter_project/modules/intro/bindings/intro_bindings.dart';
 import 'package:flutter_project/modules/intro/view/intro_page.dart';
 import 'package:flutter_project/modules/landingscreen/bindings/landing_bindings.dart';
@@ -12,8 +14,11 @@ import 'package:flutter_project/modules/authentication/login/bindings/login_bind
 import 'package:flutter_project/modules/authentication/login/view/login_page.dart';
 import 'package:flutter_project/modules/authentication/signup/bindings/signup_bindings.dart';
 import 'package:flutter_project/modules/authentication/signup/view/signup_page.dart';
+import 'package:flutter_project/modules/product/bindings/product_bindings.dart';
+import 'package:flutter_project/modules/product/view/product_page.dart';
 import 'package:flutter_project/modules/splashscreen/binding/splash_binding.dart';
 import 'package:flutter_project/modules/splashscreen/view/splash_page.dart';
+import 'package:flutter_project/shared/components/classes/items.dart';
 import 'package:get/get.dart';
 
 class Routes {
@@ -26,6 +31,8 @@ class Routes {
   static const verify = _Path.verify;
   static const created = _Path.created;
   static const base = _Path.base;
+  static const category = _Path.category;
+  static const product = _Path.product;
 }
 
 abstract class _Path {
@@ -37,6 +44,8 @@ abstract class _Path {
   static const verify = '/Verify';
   static const created = '/Created';
   static const base = '/Base';
+  static const category = '/Category';
+  static const product = '/Product';
 }
 
 class Pages {
@@ -75,5 +84,13 @@ class Pages {
         name: Routes.base,
         page: () => const BasePage(),
         binding: BaseBindings()),
+    GetPage(
+        name: Routes.category,
+        page: () => const CategoryPage(),
+        binding: CategoryBindings()),
+    GetPage(
+        name: Routes.product,
+        page: () => const ProductPage(),
+        binding: ProductBindings()),
   ];
 }

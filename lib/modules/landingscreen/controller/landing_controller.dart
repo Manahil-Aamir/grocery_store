@@ -1,24 +1,17 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_project/modules/landingscreen/widgets/customcategory.dart';
+import 'package:flutter_project/shared/components/classes/categories.dart';
 import 'package:flutter_project/shared/components/classes/items.dart';
-import 'package:flutter_project/shared/components/widgets/customitem.dart';
+import 'package:flutter_project/shared/components/classes/customitem.dart';
 import 'package:flutter_project/shared/resource/assets/images.dart';
 import 'package:get/get.dart';
 
 class LandingController extends GetxController {
-  final items = Items();
-
-  List<CustomCategory> categories = [
-    const CustomCategory(category: 'Fruits', imageUrl: Images.apple),
-    const CustomCategory(category: 'Vege', imageUrl: Images.broccoli),
-    const CustomCategory(category: 'Dairy', imageUrl: Images.cheese),
-    const CustomCategory(category: 'Meat', imageUrl: Images.meat),
-  ];
+  List<Categories> categories = Categories.all();
 
   List<CustomItem> getbest() {
-    final categoryItems = items.categoryItems;
+    final categoryItems = Items.categoryItems;
     List<CustomItem> bestDisplay = categoryItems.toList();
     return bestDisplay;
   }

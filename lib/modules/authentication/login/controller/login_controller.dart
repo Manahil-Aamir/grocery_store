@@ -25,10 +25,11 @@ class LoginController extends GetxController {
   //Login Logic
   login() async {
     try {
+      Get.offAllNamed(Routes.base);
       dismissKeyboard();
-      if (await _isFormValidated()) {
-        Get.offAllNamed(Routes.landing);
-      }
+      // if (await _isFormValidated()) {
+      //   Get.offAllNamed(Routes.landing);
+      // }
     } catch (e) {
       print(e);
     }

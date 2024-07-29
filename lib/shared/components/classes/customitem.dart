@@ -27,12 +27,14 @@ class CustomItem {
     this.itemInCart = 0,
   });
 
-  static ItemCard create(String n, String i, double w, double p) {
+  static ItemCard create(
+      String n, String i, double w, double p, CustomItem ci) {
     return ItemCard(
       name: n,
       imageUrl: i,
       weight: w,
       price: p,
+      ci: ci,
     );
   }
 }
