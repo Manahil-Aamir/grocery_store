@@ -18,7 +18,6 @@ import 'package:flutter_project/modules/product/bindings/product_bindings.dart';
 import 'package:flutter_project/modules/product/view/product_page.dart';
 import 'package:flutter_project/modules/splashscreen/binding/splash_binding.dart';
 import 'package:flutter_project/modules/splashscreen/view/splash_page.dart';
-import 'package:flutter_project/shared/components/classes/items.dart';
 import 'package:get/get.dart';
 
 class Routes {

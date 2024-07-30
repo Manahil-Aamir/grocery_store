@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_project/modules/landingscreen/controller/landing_controller.dart';
 import 'package:flutter_project/modules/landingscreen/widgets/customcategory.dart';
 import 'package:flutter_project/shared/components/widgets/customimageview.dart';
+import 'package:flutter_project/shared/extensions/widget_extensions.dart';
 import 'package:flutter_project/shared/resource/assets/images.dart';
+import 'package:flutter_project/shared/routes/Routes.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
@@ -30,7 +32,9 @@ class CategoryView extends GetView<LandingController> {
                     .textTheme
                     .headlineSmall
                     ?.copyWith(color: theme.primaryColor),
-              ),
+              ).click(onTap: () {
+                Get.toNamed(Routes.category);
+              }),
             ],
           ),
           10.verticalSpace,

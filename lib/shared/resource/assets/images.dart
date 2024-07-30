@@ -17,4 +17,8 @@ class Images {
   static const String verifyemail = '${baseImagesPath}verify_email.png';
   static const String pic = '${baseImagesPath}pic.png';
   static const String arabicginger = '${baseImagesPath}arabic_gingers.png';
+  static const String organic = '${baseImagesPath}organic.png';
+  static const String weight = '${baseImagesPath}weight.png';
+  static const String expiry = '${baseImagesPath}expiry.png';
+  static const String star = '${baseImagesPath}star.png';
 }
