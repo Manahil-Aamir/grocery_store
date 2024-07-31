@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_project/modules/categoryscreen/controller/category_controller.dart';
 import 'package:flutter_project/modules/categoryscreen/widgets/categorycard.dart';
-import 'package:flutter_project/shared/components/classes/categories.dart';
 import 'package:get/get.dart';
 
 class CategoryPage extends GetView<CategoryController> {

@@ -11,7 +11,7 @@ class CreatedPage extends GetView<CreatedController> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = context.theme;
+    // final theme = context.theme;
     return Scaffold(
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
