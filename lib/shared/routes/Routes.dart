@@ -4,6 +4,8 @@ import 'package:flutter_project/modules/authentication/verify/bindings/verify_bi
 import 'package:flutter_project/modules/authentication/verify/view/verify_page.dart';
 import 'package:flutter_project/modules/base/bindings/base_bindings.dart';
 import 'package:flutter_project/modules/base/view/base_page.dart';
+import 'package:flutter_project/modules/cart/bindings/cart_bindings.dart';
+import 'package:flutter_project/modules/cart/view/cart_page.dart';
 import 'package:flutter_project/modules/categoryscreen/bindings/category_bindings.dart';
 import 'package:flutter_project/modules/categoryscreen/view/category_page.dart';
 import 'package:flutter_project/modules/intro/bindings/intro_bindings.dart';
@@ -32,6 +34,7 @@ class Routes {
   static const base = _Path.base;
   static const category = _Path.category;
   static const product = _Path.product;
+  static const cart = _Path.cart;
 }
 
 abstract class _Path {
@@ -45,6 +48,7 @@ abstract class _Path {
   static const base = '/Base';
   static const category = '/Category';
   static const product = '/Product';
+  static const cart = '/Cart';
 }
 
 class Pages {
@@ -91,5 +95,9 @@ class Pages {
         name: Routes.product,
         page: () => const ProductPage(),
         binding: ProductBindings()),
+    GetPage(
+        name: Routes.cart,
+        page: () => const CartPage(),
+        binding: CartBindings()),
   ];
 }

@@ -16,10 +16,9 @@ class CategoryPage extends GetView<CategoryController> {
       body: GridView.builder(
         padding: const EdgeInsets.all(10),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
+          crossAxisCount: 3,
           crossAxisSpacing: 10,
           mainAxisSpacing: 10,
-          childAspectRatio: 1,
         ),
         itemCount: controller.categories.length,
         itemBuilder: (context, index) {

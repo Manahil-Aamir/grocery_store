@@ -4,7 +4,7 @@ import 'package:flutter_project/modules/landingscreen/widgets/customcategory.dar
 import 'package:flutter_project/shared/components/widgets/customimageview.dart';
 import 'package:flutter_project/shared/extensions/widget_extensions.dart';
 import 'package:flutter_project/shared/resource/assets/images.dart';
-import 'package:flutter_project/shared/routes/Routes.dart';
+import 'package:flutter_project/shared/routes/routes.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 

@@ -17,12 +17,10 @@ class LandingController extends GetxController {
   }
 
   final PageController pageController = PageController(initialPage: 0);
-  late Timer _timer;
-
   final List<String> images = [Images.banner, Images.banner, Images.banner2];
 
   void startAutoSlide() {
-    _timer = Timer.periodic(const Duration(seconds: 3), (timer) {
+    Timer.periodic(const Duration(seconds: 3), (timer) {
       int nextPage = pageController.page!.toInt() + 1;
       if (nextPage == images.length) {
         nextPage = 0;

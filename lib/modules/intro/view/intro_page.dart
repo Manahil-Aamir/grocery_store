@@ -3,7 +3,7 @@ import 'package:flutter_project/modules/intro/controller/intro_controller.dart';
 import 'package:flutter_project/shared/components/widgets/customimageview.dart';
 import 'package:flutter_project/shared/resource/assets/images.dart';
 import 'package:flutter_project/shared/resource/styles/app_styles.dart';
-import 'package:flutter_project/shared/routes/Routes.dart';
+import 'package:flutter_project/shared/routes/routes.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 

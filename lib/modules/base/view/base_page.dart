@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_project/constant/get_builder_ids.dart';
 import 'package:flutter_project/modules/base/controller/base_controller.dart';
+import 'package:flutter_project/modules/cart/view/cart_page.dart';
 import 'package:flutter_project/modules/categoryscreen/view/category_page.dart';
 import 'package:flutter_project/modules/landingscreen/view/landing_page.dart';
+import 'package:flutter_project/modules/profile/view/profile_page.dart';
 import 'package:flutter_project/shared/components/widgets/customimageview.dart';
 import 'package:flutter_project/shared/resource/assets/vectors.dart';
 import 'package:get/get.dart';
@@ -27,8 +29,8 @@ class BasePage extends GetView<BaseController> {
             children: const [
               LandingPage(),
               CategoryPage(),
-              Text('Cart'),
-              Text('Profile')
+              CartPage(),
+              ProfilePage(),
             ],
           )),
           bottomNavigationBar: Theme(

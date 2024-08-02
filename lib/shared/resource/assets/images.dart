@@ -21,4 +21,5 @@ class Images {
   static const String weight = '${baseImagesPath}weight.png';
   static const String expiry = '${baseImagesPath}expiry.png';
   static const String star = '${baseImagesPath}star.png';
+  static const String cart = '${baseImagesPath}cart.png';
 }

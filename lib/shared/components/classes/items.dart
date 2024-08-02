@@ -2,7 +2,7 @@ import 'package:flutter_project/shared/components/classes/customitem.dart';
 
 class Items {
   static List<CustomItem> categoryItems = [
-    const CustomItem(
+    CustomItem(
       imageUrl: 'assets/images/bell_pepper.png',
       name: 'Bell Pepper Red',
       price: 4.0,
@@ -14,7 +14,7 @@ class Items {
       review: 4.5,
       expiry: '1 Week',
     ),
-    const CustomItem(
+    CustomItem(
       imageUrl: 'assets/images/lamb_meat.png',
       name: 'Lamb Meat',
       price: 45.0,
@@ -26,7 +26,7 @@ class Items {
       review: 4.7,
       expiry: '2 Days',
     ),
-    const CustomItem(
+    CustomItem(
       imageUrl: 'assets/images/arabic_ginger.png',
       name: 'Arabic Ginger',
       price: 4.0,
@@ -39,7 +39,7 @@ class Items {
       review: 4.8,
       expiry: '1 Year',
     ),
-    const CustomItem(
+    CustomItem(
       imageUrl: 'assets/images/bell_pepper.png',
       name: 'Bell Pepper Red',
       price: 4.0,
@@ -51,7 +51,7 @@ class Items {
       review: 4.5,
       expiry: '1 Week',
     ),
-    const CustomItem(
+    CustomItem(
       imageUrl: 'assets/images/lamb_meat.png',
       name: 'Lamb Meat',
       price: 45.0,
@@ -63,7 +63,7 @@ class Items {
       review: 4.7,
       expiry: '2 Days',
     ),
-    const CustomItem(
+    CustomItem(
       imageUrl: 'assets/images/arabic_ginger.png',
       name: 'Arabic Ginger',
       price: 4.0,

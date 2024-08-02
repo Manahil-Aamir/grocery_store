@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/modules/cart/controller/cart_controller.dart';
 import 'package:flutter_project/shared/components/classes/customitem.dart';
 import 'package:flutter_project/shared/components/widgets/customimageview.dart';
 import 'package:flutter_project/shared/extensions/widget_extensions.dart';
-import 'package:flutter_project/shared/routes/Routes.dart';
+import 'package:flutter_project/shared/routes/routes.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
@@ -13,7 +14,7 @@ class ItemCard extends StatelessWidget {
   final double price;
   final CustomItem ci;
 
-  const ItemCard({
+  ItemCard({
     super.key,
     required this.name,
     required this.imageUrl,
@@ -21,6 +22,8 @@ class ItemCard extends StatelessWidget {
     required this.price,
     required this.ci,
   });
+
+  final CartController cartController = Get.find<CartController>();
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +41,7 @@ class ItemCard extends StatelessWidget {
           children: [
             CustomImageView(
               imagePath: imageUrl,
-              imageSize: const Size(150, 100),
+              imageSize: const Size(100, 100),
               fit: BoxFit.fill,
             ),
             5.verticalSpace,
@@ -62,7 +65,9 @@ class ItemCard extends StatelessWidget {
                   child: Center(
                     child: IconButton(
                       padding: EdgeInsets.zero,
-                      onPressed: () {},
+                      onPressed: () {
+                        cartController.addToCart(ci, 1);
+                      },
                       icon: Icon(
                         Icons.add,
                         size: 30.r,

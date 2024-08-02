@@ -14,6 +14,8 @@ class ProductPage extends GetView<ProductController> {
     super.key,
   });
 
+  //final CartController cartController = Get.find<CartController>();
+
   @override
   Widget build(BuildContext context) {
     CustomItem item = Get.arguments;
@@ -75,7 +77,9 @@ class ProductPage extends GetView<ProductController> {
               padding: EdgeInsets.symmetric(horizontal: 10.w),
               child: CustomButton(
                 text: 'Add to Cart',
-                onPressed: () {},
+                onPressed: () {
+                  controller.handlecart(item);
+                },
               ),
             ),
           ],

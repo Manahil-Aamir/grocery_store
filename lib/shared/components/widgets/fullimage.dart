@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_project/shared/components/classes/customitem.dart';
 import 'package:get/get.dart';
 
-class fullImage extends StatelessWidget {
+class FullImage extends StatelessWidget {
   final CustomItem item;
 
-  const fullImage({
+  const FullImage({
     super.key,
     required this.item,
   });
